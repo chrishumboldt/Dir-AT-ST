@@ -1,2 +1,2 @@
-# Moonwalk
-A Node recursive directory reader module.
+# Dir AT-ST
+A Node recursive directory reader (walker) module.
