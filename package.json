@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/chrishumboldt/Moonwalk/issues"
   },
-  "homepage": "https://github.com/chrishumboldt/Moonwalk#readme"
+  "homepage": "https://github.com/chrishumboldt/Moonwalk#readme",
+  "dependencies": {
+    "chalk": "^1.1.3"
+  }
 }
