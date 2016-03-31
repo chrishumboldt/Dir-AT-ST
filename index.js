@@ -20,27 +20,12 @@ module.exports = function($userOptions, $callback) {
 	var $reading = 0;
 
 	// Functions
-	var walker = function($directory) {
-		$reading++;
-		fs.readdir($directory, function($error, $fileDir) {
-			if ($error) return false;
-
-			var $len = $fileDir.length;
-			if ($len > 0) {
-				for (var $i = 0; $i < $len; $i++) {
-					walkContents(path.join($directory, $fileDir[$i]), (($len - 1) === $i) ? true : false);
-				}
-			} else {
-				walkEmpty();
-			}
-		});
-	};
 	var walkContents = function($fileDirPath, $last) {
 		fs.lstat($fileDirPath, function($error, $stat) {
 			if ($error) return false;
 
 			if ($stat.isDirectory()) {
-				walker($fileDirPath);
+				walkerDeploy($fileDirPath);
 				if ($options.find !== 'files' && $fileDirItems.indexOf($fileDirPath) == -1) {
 					$fileDirItems.push($fileDirPath);
 				}
@@ -64,6 +49,21 @@ module.exports = function($userOptions, $callback) {
 			$callback($fileDirItems);
 		}
 	};
+	var walkerDeploy = function($directory) {
+		$reading++;
+		fs.readdir($directory, function($error, $fileDir) {
+			if ($error) return false;
+
+			var $len = $fileDir.length;
+			if ($len > 0) {
+				for (var $i = 0; $i < $len; $i++) {
+					walkContents(path.join($directory, $fileDir[$i]), (($len - 1) === $i) ? true : false);
+				}
+			} else {
+				walkEmpty();
+			}
+		});
+	};
 
 	// Deploy AT-ST
 	fs.stat($options.directory, function($error, $stat) {
@@ -74,6 +74,6 @@ module.exports = function($userOptions, $callback) {
 			return false;
 		};
 
-		walker($options.directory);
+		walkerDeploy($options.directory);
 	});
 };
