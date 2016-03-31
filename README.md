@@ -11,7 +11,7 @@ npm install dir-at-st
 ## Example Usage
 Run the walker on the directory you wish to read and get an array of paths in the callback.
 
-```
+```javascript
 var walk = require('dir-at-st');
 
 walk({
