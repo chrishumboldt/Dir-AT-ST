@@ -23,6 +23,6 @@ walk({
 ```
 
 ## Options
-The AT-ST walker takes two options, namely **directory** and **find**. For **find** you can provide the options of **all**, **directories** or **files**.
+The AT-ST walker takes two options, namely **directory** and **find**. For **find** you can provide the options of **all**, **directories** or **files** with **all** being the default.
 
 Unfortunately you still won't be able to find any Ewoks!
