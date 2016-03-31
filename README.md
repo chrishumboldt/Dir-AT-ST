@@ -1,2 +1,2 @@
 # Dir AT-ST
-A Node recursive directory reader (walker) module.
+A recursive directory reader (walker) for Node.

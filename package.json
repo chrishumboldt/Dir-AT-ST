@@ -1,7 +1,7 @@
 {
 	"name": "dir-at-st",
 	"version": "0.0.1",
-	"description": "A Node recursive directory reader (walker) module.",
+	"description": "A recursive directory reader (walker).",
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
