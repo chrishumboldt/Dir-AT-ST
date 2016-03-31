@@ -12,9 +12,9 @@ npm install dir-at-st
 Run the walker on the directory you wish to read and get an array of paths in the callback.
 
 ```javascript
-var walk = require('dir-at-st');
+var walker = require('dir-at-st');
 
-walk({
+walker({
    directory: 'example-folder',
    find: 'all'
 }, function($filesFolders) {
