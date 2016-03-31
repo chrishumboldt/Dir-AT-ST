@@ -20,7 +20,7 @@ module.exports = function($userOptions, $callback) {
 	var $reading = 0;
 
 	// Functions
-	var moonwalk = function($directory) {
+	var walker = function($directory) {
 		$reading++;
 		fs.readdir($directory, function($error, $fileDir) {
 			if ($error) return false;
@@ -40,7 +40,7 @@ module.exports = function($userOptions, $callback) {
 			if ($error) return false;
 
 			if ($stat.isDirectory()) {
-				moonwalk($fileDirPath);
+				walker($fileDirPath);
 				if ($options.find !== 'files' && $fileDirItems.indexOf($fileDirPath) == -1) {
 					$fileDirItems.push($fileDirPath);
 				}
@@ -65,7 +65,7 @@ module.exports = function($userOptions, $callback) {
 		}
 	};
 
-	// Start walking
+	// Deploy AT-ST
 	fs.stat($options.directory, function($error, $stat) {
 		if ($error) {
 			console.log('');
@@ -74,6 +74,6 @@ module.exports = function($userOptions, $callback) {
 			return false;
 		};
 
-		moonwalk($options.directory);
+		walker($options.directory);
 	});
 };
