@@ -15,10 +15,10 @@ Run the walker on the directory you wish to read and get an array of paths in th
 var walk = require('dir-at-st');
 
 walk({
-	directory: 'example-folder',
-	find: 'all'
+   directory: 'example-folder',
+   find: 'all'
 }, function($filesFolders) {
-	console.log($filesFolders);
+   console.log($filesFolders);
 });
 ```
 
