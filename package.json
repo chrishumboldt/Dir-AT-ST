@@ -1,6 +1,6 @@
 {
   "name": "dir-at-st",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A recursive directory reader (walker).",
   "main": "index.js",
   "scripts": {
